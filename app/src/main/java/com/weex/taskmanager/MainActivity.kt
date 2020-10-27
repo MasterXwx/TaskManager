@@ -1,7 +1,10 @@
 package com.weex.taskmanager
 
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+
+const val TAG = "TAG"
 
 class MainActivity : AppCompatActivity() {
 
@@ -9,4 +12,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
 }

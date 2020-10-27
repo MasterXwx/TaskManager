@@ -1,4 +1,4 @@
-package com.weex.taskmanager
+package com.weex.manager
 
 import org.junit.Test
 
@@ -13,10 +13,5 @@ class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
-    }
-
-    @Test
-    fun t() {
-        TaskTest.main(arrayOf(""))
     }
 }
