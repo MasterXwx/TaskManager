@@ -8,5 +8,5 @@ interface ITask {
 
     fun getCurState(): Int
 
-    fun singleTask(): Boolean
+    fun isGroupTask(): Boolean
 }

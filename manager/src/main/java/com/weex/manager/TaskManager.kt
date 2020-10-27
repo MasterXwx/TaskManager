@@ -78,7 +78,7 @@ object TaskManager : Runnable, TaskListener {
 
     override fun onFinished(task: Task) {
         println("finished # ${task.name}")
-        if (task.singleTask()) {
+        if (!task.isGroupTask()) {
             synchronized(lock) {
                 lock.notifyAll()
             }

@@ -133,7 +133,7 @@ abstract class Task(var name: String = "") : ITask, Runnable, TaskListener {
 
     }
 
-    override fun singleTask(): Boolean {
+    override fun isGroupTask(): Boolean {
         return remainTask.get() > 0
     }
 

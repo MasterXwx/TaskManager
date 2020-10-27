@@ -2,7 +2,7 @@
 任务管理器
 
 # 使用方法
-![avatar](/art/WX20201027-172414.png)
+![avatar](/art/fixed_usage.png)
 
 # 日志
-![avatar](/art/WX20201027-172716.png)
+![avatar](/art/fixed_log.png)
