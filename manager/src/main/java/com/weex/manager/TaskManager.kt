@@ -51,7 +51,6 @@ object TaskManager : Runnable, TaskListener {
 
     override fun run() {
         while (!Thread.interrupted()) {
-            println("start take")
             val task = taskQueue.take()
             println("take | ${task.name}")
             submit(task)
@@ -79,6 +78,11 @@ object TaskManager : Runnable, TaskListener {
 
     override fun onFinished(task: Task) {
         println("finished # ${task.name}")
+        if (task.singleTask()) {
+            synchronized(lock) {
+                lock.notifyAll()
+            }
+        }
     }
 
     override fun onGroupFinished(group: Task) {

@@ -114,11 +114,13 @@ abstract class Task(var name: String = "") : ITask, Runnable, TaskListener {
             return
         }
 
-        val remain = remainTask.decrementAndGet()
-        println("task ${task.name} finished | group $name remain $remain tasks ")
-        if (remain == 0) {
-            taskListeners.forEach {
-                it.onGroupFinished(this)
+        synchronized(remainTask) {
+            val remain = remainTask.decrementAndGet()
+            println("task ${task.name} finished | group $name remain $remain tasks ")
+            if (remain == 0) {
+                taskListeners.forEach {
+                    it.onGroupFinished(this)
+                }
             }
         }
     }
@@ -129,6 +131,10 @@ abstract class Task(var name: String = "") : ITask, Runnable, TaskListener {
 
     override fun onGroupFinished(group: Task) {
 
+    }
+
+    override fun singleTask(): Boolean {
+        return remainTask.get() > 0
     }
 
 }

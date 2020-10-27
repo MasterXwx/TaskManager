@@ -14,11 +14,11 @@ public class TaskTest {
 
     public static void main(String[] args) {
         InitSdkTask initSdkTask = new InitSdkTask("group-init");
-        List<InitSdkTask> tasks = new ArrayList<>();
-        for (int i = 0, size = 3; i < size; i++) {
-            tasks.add(new InitSdkTask("init-" + i + "-task"));
-        }
-        initSdkTask.addTasks(tasks);
+//        List<InitSdkTask> tasks = new ArrayList<>();
+//        for (int i = 0, size = 3; i < size; i++) {
+//            tasks.add(new InitSdkTask("init-" + i + "-task"));
+//        }
+//        initSdkTask.addTasks(tasks);
         PrepareResTask prepareResTask = new PrepareResTask("group-prepare");
         List<PrepareResTask> prepareTasks = new ArrayList<>();
         for (int i = 0, size = 3; i < size; i++) {
@@ -39,7 +39,7 @@ public class TaskTest {
         public void task() {
             try {
                 System.out.println("thread # " + Thread.currentThread().getName() +
-                        "in task " + getName());
+                        " in task " + getName());
                 TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -57,7 +57,7 @@ public class TaskTest {
         public void task() {
             try {
                 System.out.println("thread # " + Thread.currentThread().getName() +
-                        "in task " + getName());
+                        " in task " + getName());
                 TimeUnit.MILLISECONDS.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();

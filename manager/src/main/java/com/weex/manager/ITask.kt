@@ -7,4 +7,6 @@ package com.weex.manager
 interface ITask {
 
     fun getCurState(): Int
+
+    fun singleTask(): Boolean
 }
